@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import useFetch from '../components/useFetch'
 
 export default function Home() {
+  const userInfo = useFetch("https://randomuser.me/api/?results=12");
+  console.log(userInfo);
   return (
     <div className={styles.container}>
       <Head>
@@ -50,6 +53,7 @@ export default function Home() {
             </p>
           </a>
         </div>
+
       </main>
 
       <footer className={styles.footer}>
